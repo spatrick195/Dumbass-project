@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Super Rugby</title>
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+
+<body>
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+    <script src="/assets/js//main.js"></script>
+
+    <nav class="w3-bar w3-flat-concrete w3-border-bottom">
+        <a href="/" class="w3-bar-item w3-button">
+            <strong>SUPER Rugby</strong>
+        </a>
+        <div class="w3-dropdown-hover w3-right">
+            <button class="w3-button">Admin Area</button>
+            <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                <a href="/login_form" class="w3-bar-item w3-button">Login</a>
+                <a href="/registration_form" class="w3-bar-item w3-button">Register</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="w3-container main-header w3-border-bottom">
+        <h1 class="w3-text-green" style="text-shadow:1px 1px 0 #444">
+            <strong>Super Rugby</strong>
+        </h1>
+        <p class="w3-text-grey w3-large">Your one stop for all things about Super Rugby</p>
+    </header>
+
+    <div class="w3-row">
+        <div class="w3-col w3-container m1 w3-margin-bottom">
+            <div class="w3-bar w3-light-grey w3-border-bottom">
+                <a href="#" class="w3-bar-item w3-button">Teams</a>
+            </div>
+        </div>
+        <div class="w3-col w3-container m9">
+            <div class="w3-bar w3-light-grey w3-border-bottom" id="filter-bar">
+                <a href="#" class="w3-bar-item w3-button w3-flat-concrete">Sort</a>
+                <input type="text" class="w3-bar-item w3-input" placeholder="&#x1F50D Search..">
+            </div>
+        </div>
+        <div class="w3-col w3-container m2">
+            <div class="w3-bar w3-light-grey w3-border-bottom">
+                <a href="#" class="w3-bar-item w3-button">Stats</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="w3-row">
+        <div class="w3-col w3-container m1">
+            <ul id="team-menu" class="w3-ul">
+                <li w3-repeat="data" onclick="getPlayers(event)" class="w3-hover-{{colour}}" data-team="{{team}}">
+                    <img src="/assets/imgs/logos/{{colour}}_logo.png" class="w3-circle" alt="Teams List" max-width="15%"> {{team}}
+                </li>
+            </ul>
+        </div>
+        <div class="w3-col w3-container m9">
+            <main>
+                <div class="slider">
+                    <div class="img game w3-animate-opacity" style="background-image: url('assets/imgs/slider/1.jpg')"></div>
+                    <div class="img game w3-animate-opacity" style="background-image: url('assets/imgs/slider/2.jpg')"></div>
+                    <div class="img game w3-animate-opacity" style="background-image: url('assets/imgs/slider/3.jpg')"></div>
+                </div>
+                <div id="grid-container">
+                    <div id="card-grid">
+                        <div class="w3-card w3-animate-zoom player" w3-repeat="data">
+                            <img src="assets/imgs/players/{{image}}" alt="{{name}}" class="w3-hover-grayscale" 
+                            data-player-id="{{id}}" data-position="{{position}}" onclick="getPlayer(event)">
+                            <div class="w3-container">
+                                <p><strong class="name">{{name}}</strong></p>
+                                <p class="position">{{position}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <div class="w3-col w3-container m2" id="aside">
+            <img src="/assets/imgs/trophy.png" height="400px" width="400px" id="trophy">
+            <div id="team" class="w3-card" w3-repeat="data">
+                <header class="w3-container w3-light-grey">
+                    <h3><img src="assets/imgs/logos/{{logo}}"> {{team}} </h3>
+                </header>
+                <div class="w3-container">
+                    <div class="w3-center">
+                        <img src="assets/imgs/grounds/{{ground_image}}" class="w3-padding" alt="ground" id="ground">
+                    </div>
+                    <p><strong>Location:</strong> {{location}}</p>
+                    <p><strong>Coach:</strong> {{coach}}</p>
+                </div>
+            </div>
+            <div id="player" class="w3-card" w3-repeat="data">
+                <header class="w3-container w3-light-grey">
+                    <h3>{{team}} </h3>
+                </header>
+                <img src="assets/imgs/players/{{image}}" alt="{{name}}">
+                <div class="w3-container">
+                    <p><strong>{{name}}</strong></p>
+                    <p>Position: {{position}}</p>
+                    <p>Height: {{height}}</p>
+                    <p>Weight: {{weight}}</p>
+                    <p>Age: {{age}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+    <script src="/assets/js/main.js"></script>
+</body>
+
+</html>

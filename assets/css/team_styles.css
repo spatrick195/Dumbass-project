@@ -1,0 +1,55 @@
+a {
+  text-decoration: none;
+  color: blue;
+}
+
+#container {
+  display: grid;
+  grid-template-columns: 15% 65% 20%;
+  padding: 0 10px;
+}
+
+#right {
+  padding: 0 0 0 10px;
+}
+
+#stats {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 10px;
+  padding: 10px;
+  border: 0;
+  color: grey;
+  padding: 0 20px;
+}
+
+#stats,
+#player i {
+  font-size: 2rem;
+}
+
+#stats .w3-card {
+  border: 1px lightgrey solid;
+}
+
+#players h4 {
+  margin: 10px 20px;
+}
+
+table a {
+  color: blue !important;
+}
+
+.w3-ul > li:hover {
+cursor: pointer;
+}
+
+label {
+  color: darkgrey;
+}
+
+select{
+  width:100%;
+  border: 1px solid #cccccc;
+  padding:6px;
+}

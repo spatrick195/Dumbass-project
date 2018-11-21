@@ -1,0 +1,44 @@
+.main-header {
+    background-image: url("/assets/imgs/header.jpg");
+    height:120px;
+    background-size: contain;
+}
+
+div.w3-col:nth-child(1),div.w3-col:nth-child(2), div.w3-col:nth-child(3) {
+    padding: 0;
+}
+
+#filter-bar {
+    padding-left: 10px;
+}
+.slider .img {
+    height: 60vh;
+    background-size: cover;
+}
+#aside {
+    padding: 0 10px;
+}
+#grid-container {
+    padding: 0 0 0 10px;
+}
+#card-grid {
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    grid-gap: 10px;
+}
+img {
+    max-width:100%;
+}
+
+#card-grid > div > img {
+    max-width:100%;
+}
+#card-grid .w3-card{
+    border: 1px solid #ebebeb;
+}
+#team-menu > li > img {
+    max-width:15%;
+}
+#team > header > h3 > img {
+    max-width:15%;
+}
