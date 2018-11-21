@@ -156,6 +156,7 @@ if (!isset($_SESSION["loggedin"]) && !($_SESSION["loggedin"])) {
                             </p>
                         </form>
                     </div>
+
                     <!-- UPDATE PLAYER FORM -->
                     <div class="w3-card update-player" id="update-player-card">
                         <div class="w3-bar w3-green">
@@ -199,12 +200,6 @@ if (!isset($_SESSION["loggedin"]) && !($_SESSION["loggedin"])) {
                             </p>
                         </form>
                     </div>
-                    <!-- <div class="w3-card">
-                        <form method="post" enctype="multipart/form-data" id="upload-form">
-                        <input type="file" name="files[]" multiple>
-                        <input type="submit" value="Upload File" name="submit">
-                        </form>
-                    </div> -->
                 </div>
             </div>
         </div>

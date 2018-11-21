@@ -1,4 +1,4 @@
-<?php
+<?php 
 require_once('data/database.php');
 
 if (isset($_SESSION["id"])) {
@@ -56,29 +56,28 @@ if (isset($_SESSION['validate'])) {
 
     if ($row['count'] > 0) {
         $_SESSION['loggedin'] = true;
-        if ($role == "admin") {
+        if($role == "admin") {
             header("Location: /admin/dashboard");
         } elseif ($role == "team admin") {
             $_SESSION["club"] = $row['team'];
             $_SESSION['loggedin'] = true;
             header("Location: /admin/team_dashboard");
         }
-    } else {
+    } else{
         $_SESSION['loggedin'] = false;
         $_SESSION["message"] = "unsuccessful";
-        header("Location: /login_form_message");
+        header("Location: /login_form");
     }
 }
 
-function checkUserExists($db)
-{
+function checkUserExists($db) {
     $select = "SELECT count(*) as count FROM users WHERE username =:username";
     $stmt = $db->prepare($select);
     $stmt->bindValue(':username', $_SESSION['username'], SQLITE3_TEXT);
     $result = $stmt->execute();
     $row = $result->fetchArray();
 
-    if ($row['count'] > 0) {
+    if ($row['count'] > 0) { 
         header("Location: /registration_form_message");
         die();
     }
@@ -90,6 +89,5 @@ function getUser($db)
     $stmt->bindValue(':username', $_SESSION['username'], SQLITE3_TEXT);
     $result = $stmt->execute();
     $row = $result->fetchArray();
-    return ($row);
+    return($row);
 }
-

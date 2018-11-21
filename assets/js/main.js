@@ -11,6 +11,7 @@ function displayTeams(data) {
 }
 
 function getPlayers(event) {
+    // alert();
     w3.hide("#trophy")
     let team = event.target.getAttribute("data-team");
     w3.getHttpObject(`/api/players?team=${team}`, displayPlayers);
@@ -29,6 +30,7 @@ function displayTeam(data) {
     w3.hide("#player");
     w3.displayObject("aside", data);
     w3.show("#team");
+    
 }
 function getPlayer(event) {
     w3.hide("#team");
@@ -37,6 +39,7 @@ function getPlayer(event) {
 }
 
 function displayPlayer(data) {
+    // alert();
     w3.hide("#team")
     w3.displayObject("aside", data);
     w3.show("#player");

@@ -3,25 +3,25 @@ session_start();
 require_once 'config/config.php';
 $request = $_SERVER['REQUEST_URI'];
 
-if (strpos($request,  'admin') !== false) {
+if (strpos($request, 'admin') !== false) {
     require_once __DIR__ . '/routes/admin.php';
 }
 
 switch ($request) {
-    case '/' :
+    case '/':
         require __DIR__ . '/views/index.html';
         break;
 
-    case '/api/player?id=' .$id:
+    case '/api/player?id=' . $id:
         $_SESSION["id"] = $id;
         require __DIR__ . '/data/models/user.php';
-        break;    
+        break;
 
     case '/api/teams':
         $_SESSION["teams"] = true;
         require __DIR__ . '/data/models/team.php';
         break;
-        
+
     case '/api/players?team=' . $team:
         $_SESSION["team"] = $team;
         $_SESSION["players"] = true;
@@ -56,7 +56,7 @@ switch ($request) {
         $_SESSION['validate'] = true;
         require __DIR__ . '/data/models/user.php';
         break;
-case '/login_form_message':
+    case '/login_form_message':
         $_SESSION["message"] = "unsuccessful";
         require __DIR__ . '/views/login.php';
         break;
@@ -71,20 +71,12 @@ case '/login_form_message':
 
         break;
 
-    // case '/admin/dashboard':+
-    //     require __DIR__ . '/views/admin_dashboard.php';
-    //     break;
-
-    // case '/team/dashboard':
-    //     require __DIR__ . '/views/team_dashboard.php';
-    //     break;
-
     case '/logout':
         unset($_SESSION['loggedin']);
         header("Location: /");
         break;
 
-    default: 
+    default:
         require __DIR__ . '/views/404.html';
         break;
 }
